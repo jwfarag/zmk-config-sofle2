@@ -59,6 +59,11 @@
             bindings = <&kp RIGHT_SHIFT>;
             key-positions = <54 55>;
         };
+
+        SafeEnter {
+            bindings = <&kp ENTER>;
+            key-positions = <49 48>;
+        };
     };
 
     behaviors {
@@ -75,7 +80,7 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <250>;
             flavor = "tap-preferred";
         };
     };
@@ -94,12 +99,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp GRAVE       &hold_tap LS(N1) N1   &hold_tap LS(N2) N2   &hold_tap LS(N3) N3   &hold_tap LS(N4) N4   &hold_tap LS(N5) N5                                       &hold_tap LS(N6) N6   &hold_tap LS(N7) N7   &hold_tap LS(N8) N8   &hold_tap LS(N9) N9   &hold_tap LS(N0) N0   &kp BACKSPACE
-&kp TAB         &hold_tap LS(Q) Q    &hold_tap LS(W) W    &hold_tap LS(E) E    &hold_tap LS(R) R    &hold_tap LS(T) T                                       &hold_tap LS(Y) Y    &hold_tap LS(U) U    &hold_tap LS(I) I    &hold_tap LS(O) O    &hold_tap LS(P) P    &kp BSLH
-&kp CAPSLOCK    &hold_tap LS(A) A    &hold_tap LS(S) S    &hold_tap LS(D) D    &hold_tap LS(F) F    &hold_tap LS(G) G                                       &hold_tap LS(H) H    &hold_tap LS(J) J    &hold_tap LS(K) K    &hold_tap LS(L) L    &kp SEMI             &kp SQT
-&kp LEFT_SHIFT  &hold_tap LS(Z) Z    &hold_tap LS(X) X    &hold_tap LS(C) C    &hold_tap LS(V) V    &hold_tap LS(B) B    &kp C_MUTE    &kp C_PLAY_PAUSE     &hold_tap LS(N) N    &hold_tap LS(M) M    &kp COMMA            &kp DOT              &kp FSLH             &kp RIGHT_SHIFT
-                                     &kp LEFT_GUI         &kp LALT             &kp LEFT_CONTROL     &mo LOWER            &kp ENTER            &kp SPACE            &mo RAISE            &lt 4 ESC             &kp MINUS            &kp EQUAL
-
+&kp GRAVE       &hold_tap LS(N1) N1  &hold_tap LS(N2) N2  &hold_tap LS(N3) N3  &hold_tap LS(N4) N4  &hold_tap LS(N5) N5                                  &hold_tap LS(N6) N6  &hold_tap LS(N7) N7  &hold_tap LS(N8) N8  &hold_tap LS(N9) N9  &hold_tap LS(N0) N0  &kp BACKSPACE
+&kp TAB         &hold_tap LS(Q) Q    &hold_tap LS(W) W    &hold_tap LS(E) E    &hold_tap LS(R) R    &hold_tap LS(T) T                                    &hold_tap LS(Y) Y    &hold_tap LS(U) U    &hold_tap LS(I) I    &hold_tap LS(O) O    &hold_tap LS(P) P    &kp BSLH
+&kp CAPSLOCK    &hold_tap LS(A) A    &hold_tap LS(S) S    &hold_tap LS(D) D    &hold_tap LS(F) F    &hold_tap LS(G) G                                    &hold_tap LS(H) H    &hold_tap LS(J) J    &hold_tap LS(K) K    &hold_tap LS(L) L    &kp SEMI             &kp SQT
+&kp LEFT_SHIFT  &hold_tap LS(Z) Z    &hold_tap LS(X) X    &hold_tap LS(C) C    &hold_tap LS(V) V    &hold_tap LS(B) B    &kp C_MUTE    &kp C_PLAY_PAUSE  &hold_tap LS(N) N    &hold_tap LS(M) M    &kp COMMA            &kp DOT              &kp FSLH             &kp RIGHT_SHIFT
+                                     &kp LEFT_GUI         &kp LALT             &kp LEFT_CONTROL     &mo LOWER            &kp ENTER     &lt 4 SPACE       &mo RAISE            &lt 4 ESC            &kp MINUS            &kp EQUAL
             >;
 
             sensor-bindings =
@@ -119,11 +123,11 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&kp ESC  &kp F1     &kp F2         &kp F3        &kp F4                &kp F5                                   &kp F6          &kp F7        &kp F8        &kp F9        &kp F10                &kp F11
-&trans   &kp N1     &kp N2         &kp N3        &kp N4                &kp N5                                   &kp NUMBER_6    &kp N7        &kp N8        &kp N9        &kp N0                 &kp F12
-&trans   &kp EXCL   &kp AT         &kp HASH      &kp DLLR              &kp PRCNT                                &kp CARET       &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp RIGHT_PARENTHESIS  &kp PIPE
-&trans   &kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans    &trans  &kp UNDERSCORE  &kp NUMBER_1  &kp NUMBER_2  &kp N3        &kp PIPE               &trans
-                    &trans         &trans        &trans                &trans                 &trans    &trans  &trans          &trans        &kp NUMBER_0  &trans
+&kp ESC  &kp F1     &kp F2         &kp F3        &kp F4                &kp F5                                   &kp F6          &kp F7  &kp F8        &kp F9        &kp F10                &kp F11
+&trans   &kp N1     &kp N2         &kp N3        &kp N4                &kp N5                                   &kp NUMBER_6    &kp N1  &kp N2        &kp N3        &kp N0                 &kp F12
+&trans   &kp EXCL   &kp AT         &kp HASH      &kp DLLR              &kp PRCNT                                &kp CARET       &kp N4  &kp NUMBER_5  &kp NUMBER_6  &kp RIGHT_PARENTHESIS  &kp PIPE
+&trans   &kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans    &trans  &kp UNDERSCORE  &kp N7  &kp N8        &kp N9        &kp PIPE               &trans
+                    &trans         &trans        &trans                &trans                 &trans    &trans  &trans          &trans  &kp NUMBER_0  &trans
             >;
 
             sensor-bindings =
